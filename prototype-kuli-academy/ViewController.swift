@@ -169,6 +169,17 @@ class ViewController: UIViewController {
       // Put it in view
       //self.view.layer.insertSublayer(shapeLayer, above: self.view.layer)
       canvasView.layer.addSublayer(shapeLayer)
+
+    // distance
+    print("distance \(CGPointDistance(from: startPoint, to: endPoint))")
+  }
+
+  func CGPointDistanceSquared(from: CGPoint, to: CGPoint) -> CGFloat {
+      return (from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y)
+  }
+
+  func CGPointDistance(from: CGPoint, to: CGPoint) -> CGFloat {
+      return sqrt(CGPointDistanceSquared(from: from, to: to))
   }
 
 }
